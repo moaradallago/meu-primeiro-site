@@ -3,114 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Início | Ingressos Show</title>
+  <title>Início | Eazy Buy</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <!-- <h1>Eazy Buy</h1> -->
-    <nav class="Navbar inline">
-      <div class="inline content-3 space-between">
-        <a href="/" class="Logo block-center-center">
-            <img
-              src="Compra.png"
-              alt="Easy Buy logo"
-            />
-        </a>
-        <div class="Menu inline-center-center">
-          <div class="NavItem block-center-center">
-            <a href="/" class="NavLink block-center-center"
-              ><span class="NavLinkTitle">FILMES</span
-              ><span class="NavIcon"><i class="ri-film-line"></i></span
-            ></a>
-          </div>
-          <div class="NavItem block-center-center">
-            <a href="/" class="NavLink block-center-center"
-              ><span class="NavLinkTitle">CINEMAS</span>
-              <span class="NavIcon"><i class="ri-tv-2-line"></i></span
-            ></a>
-          </div>
-          <div class="NavItem block-center-center">
-            <a href="/" class="NavLink block-center-center"
-              ><span class="NavLinkTitle">TEATRO</span
-              ><span class="NavIcon"><i class="ri-award-line"></i></span
-            ></a>
-          </div>
-          <div class="NavItem block-center-center">
-            <a href="/" class="NavLink block-center-center"
-              ><span class="NavLinkTitle">EVENTOS</span
-              ><span class="NavIcon"><i class="ri-team-line"></i></span
-            ></a>
-            
-          </div>
-          <div class="NavItem block-center-center">
-            <a href="/" class="NavLink block-center-center"
-              ><span class="NavLinkTitle">NOTÍCIAS</span
-              ><span class="NavIcon"><i class="ri-community-line"></i></span
-            ></a>
-           
-          </div>
-        </div>
-
-        <div class="inline-center-center gap-3">
-          <a href="#" class="ButtonLink">Sign In</a>
-        </div>
-      </div>
-    </nav>
-
-    <main class="Main block">
-      <div class="CarouselWrapper">
-        <section class="Carousel inline">
-          <figure>
-            <picture>
-              <img
-                src="Teatro.jpg"
-                alt="New Year Celebrations"
-              />
-            </picture>
-          </figure>
-          <figure>
-            <picture>
-              <img
-                src="Cartaz.jpg"
-                alt="New Year Celebrations"
-              />
-            </picture>
-          </figure>
-          <figure>
-            <picture>
-              <img
-                src="Eventos.jpg"
-                alt="New Year Celebrations"
-              />
-            </picture>
-          </figure>
-        </section>
-      </div>
-
-      <footer>
-        <div class="CodePen block-center-end">
-          <p>Rodapé</p>
-        </div>
-      </footer>
-    </main>
-
+    <div class="barra">
+      <a href="index.html" class="logo"><img src="css/imagens/Compra.png" alt="Eazy Buy"></a>
+      <nav aria-label="Menu principal">
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="login.html" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn">Cadastrar</a>
+      </nav>
+    </div>
   </header>
+  <div class="hero"><div>
+    <h1>Seu show começa aqui</h1>
+    <p>Escolha o show, compre o ingresso online e receba na hora no seu e-mail.</p>
+    <a href="#shows" class="btn">Ver shows</a>
+  </div></div>
   <main>
-    <section class="cartao">
-      <h2>Bem-vindo</h2>
-      <p>Aqui você encontra os melhores shows e compra seu ingresso de forma rápida e segura.</p>
-      <h2>O que você encontra aqui</h2>
-      <ul>
-        <li>Lista de shows e datas</li>
-        <li>Escolha de setor e quantidade de ingressos</li>
-        <li>Compra online com ingresso digital</li>
-      </ul>
-      <a class="botao" href="sobre.html">Conheça o nosso site</a>
+    <section id="shows">
+      <h2>Shows disponíveis</h2>
+      <p class="sub">Escolha o seu e compre em poucos cliques.</p>
+      <div class="shows">
+        <article class="ingresso"><div class="topo"><small>20 DEZ · SÁB</small><h3>Noite Sertaneja</h3></div><div class="corte"></div><div class="base"><p>Goiânia, GO<br>Arena Central<span class="preco">R$ 80</span></p><a href="login.html" class="btn">Comprar</a></div></article>
+        <article class="ingresso"><div class="topo"><small>27 DEZ · SÁB</small><h3>Festival Rock Cerrado</h3></div><div class="corte"></div><div class="base"><p>Goiânia, GO<br>Parque de Eventos<span class="preco">R$ 120</span></p><a href="login.html" class="btn">Comprar</a></div></article>
+        <article class="ingresso"><div class="topo"><small>10 JAN · SEX</small><h3>Pop Night</h3></div><div class="corte"></div><div class="base"><p>Anápolis, GO<br>Espaço Show<span class="preco">R$ 95</span></p><a href="login.html" class="btn">Comprar</a></div></article>
+        <article class="ingresso"><div class="topo"><small>17 JAN · SÁB</small><h3>Roda de Pagode</h3></div><div class="corte"></div><div class="base"><p>Goiânia, GO<br>Clube Bordô<span class="preco">R$ 60</span></p><a href="login.html" class="btn">Comprar</a></div></article>
+        <article class="ingresso"><div class="topo"><small>24 JAN · SÁB</small><h3>Noite de Jazz</h3></div><div class="corte"></div><div class="base"><p>Goiânia, GO<br>Teatro Municipal<span class="preco">R$ 70</span></p><a href="login.html" class="btn">Comprar</a></div></article>
+        <article class="ingresso"><div class="topo"><small>31 JAN · SÁB</small><h3>Stand-up Comedy</h3></div><div class="corte"></div><div class="base"><p>Aparecida, GO<br>Casa de Shows<span class="preco">R$ 50</span></p><a href="login.html" class="btn">Comprar</a></div></article>
+      </div>
+    </section>
+    <section>
+      <h2>Como comprar</h2>
+      <ol class="passos">
+        <li>Crie sua conta ou entre</li>
+        <li>Escolha o show</li>
+        <li>Informe a quantidade</li>
+        <li>Pague e receba o ingresso digital</li>
+      </ol>
     </section>
   </main>
-  <footer>
-    <p>Projeto de venda de ingressos de show</p>
-  </footer>
+  <footer><p>Eazy Buy · Projeto de venda de ingressos de show</p></footer>
 </body>
 </html>

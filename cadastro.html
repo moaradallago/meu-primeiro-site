@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | Eazy Buy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="barra">
+      <a href="index.html" class="logo"><img src="css/imagens/Compra.png" alt="Eazy Buy"></a>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="login.html" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn">Cadastrar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <form class="cartao" action="login.html">
+      <h1>Criar conta</h1>
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="nome" required>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" minlength="6" required>
+      <label for="senha2">Confirmar senha</label>
+      <input type="password" id="senha2" name="senha2" minlength="6" required>
+      <button class="btn" type="submit">Criar conta</button>
+      <p class="troca">Já tem conta? <a href="login.html">Entrar</a></p>
+    </form>
+  </main>
+  <footer><p>Eazy Buy · Projeto de venda de ingressos de show</p></footer>
+</body>
+</html>

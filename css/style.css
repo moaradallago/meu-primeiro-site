@@ -1,253 +1,72 @@
+/* Eazy Buy - bordô, branco e preto */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
 
-
-@import 'https://unpkg.com/open-props' layer(design.system);
-@import 'https://unpkg.com/open-props/normalize.dark.min.css'
-  layer(base.normalize);
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200..900&family=Pacifico&display=swap');
-
-@import 'https://www.unpkg.com/layout-craft@0.1.1/dist/utilities.css'
-  layer(design.utilities);
-/* 
-Source code of these utilities: 
-https://github.com/mobalti/layout-craft/blob/main/lib/utilities.css 
-*/
-
-@layer base.normalize-overrides {
-  :root {
-    font-family: 'Inter', sans-serif;
-
-    --brand: oklch(64% 0.24 18);
-
-    --nav-block-size: 4.625rem;
-  }
-
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  :is(ul, li) {
-    padding: 0;
-  }
-
-  li {
-    max-inline-size: unset;
-  }
-
-  figure {
-    all: unset;
-  }
+:root {
+  --bordo: #7a1230;
+  --bordo-escuro: #4a0a1d;
+  --preto: #0a0a0a;
+  --cinza: #1b1b1b;
+  --branco: #fff;
+  --texto-suave: #cfc4c7;
 }
+* { box-sizing: border-box; margin: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--preto); color: var(--branco); line-height: 1.6; }
+a { color: inherit; }
+h1, h2, h3 { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: .02em; line-height: 1.1; }
+:focus-visible { outline: 3px solid var(--branco); outline-offset: 3px; }
 
-@layer base.app {
-  body {
-    background: black;
-  }
-}
+/* Cabeçalho */
+header { background: var(--preto); border-bottom: 3px solid var(--bordo); position: sticky; top: 0; z-index: 10; }
+.barra { max-width: 1100px; margin: auto; padding: 10px 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: 'Anton', sans-serif; font-size: 1.6rem; margin-right: auto; }
+.logo img { height: 70px; }
+nav { display: flex; gap: 20px; align-items: center; }
+nav a { text-decoration: none; font-weight: 600; padding: 4px 0; border-bottom: 2px solid transparent; }
+nav a:hover, nav a[aria-current="page"] { border-color: var(--bordo); }
+.btn { display: inline-block; background: var(--bordo); color: var(--branco); padding: 10px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; border: 2px solid var(--bordo); cursor: pointer; font-size: 1rem; font-family: inherit; }
+.btn:hover { background: var(--branco); color: var(--bordo); }
+.btn-contorno { background: transparent; border-color: var(--branco); }
+nav a.btn { border-bottom: 2px solid var(--bordo); }
 
-@layer base.containers {
-  .Navbar {
-    min-block-size: var(--nav-block-size);
-    justify-items: center;
-    padding-inline: var(--size-fluid-3);
-    background-color: black;
-  }
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--bordo-escuro), var(--bordo) 60%, var(--preto)); padding: 90px 20px; }
+.hero div { max-width: 1100px; margin: auto; }
+.hero h1 { font-size: clamp(3rem, 10vw, 7rem); text-transform: uppercase; max-width: 10ch; }
+.hero p { max-width: 45ch; margin: 20px 0 30px; font-size: 1.15rem; }
 
-  .Menu {
-    @media (width < 1024px) {
-      position: fixed;
-      inset-inline: 0;
-      inset-block-end: 0;
-      block-size: var(--nav-block-size);
-      overflow-x: auto;
+main section { max-width: 1100px; margin: auto; padding: 60px 20px; }
+main h2 { font-size: 2.2rem; margin-bottom: 8px; }
+.sub { color: var(--texto-suave); margin-bottom: 30px; }
 
-      .ItemContent {
-        display: none;
-      }
-    }
+/* Ingressos (cards) */
+.shows { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 26px; }
+.ingresso { display: flex; flex-direction: column; background: var(--branco); color: var(--preto); border-radius: 10px; overflow: hidden; }
+.ingresso .topo { background: var(--bordo); color: var(--branco); padding: 22px 20px; min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end; }
+.ingresso:nth-child(even) .topo { background: var(--preto); border-bottom: 4px solid var(--bordo); }
+.topo small { font-weight: 700; }
+.topo h3 { font-size: 1.7rem; }
+.corte { border-top: 3px dashed #cfcfcf; margin: 0 14px; }
+.ingresso .base { padding: 16px 20px 20px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.base p { font-size: .9rem; line-height: 1.4; }
+.preco { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: var(--bordo); display: block; }
 
-    @media (width >= 768px) {
-      .NavIcon {
-        display: none;
-      }
-    }
+/* Como funciona */
+.passos { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; list-style: none; padding: 0; counter-reset: p; }
+.passos li { background: var(--cinza); padding: 22px; border-left: 4px solid var(--bordo); counter-increment: p; }
+.passos li::before { content: counter(p); font-family: 'Anton', sans-serif; font-size: 2rem; color: var(--bordo); display: block; }
 
-    @media (width < 768px) {
-      .NavLink:hover {
-        text-decoration: none;
-      }
-      .NavLinkTitle {
-        display: none;
-      }
-    }
-  }
-  .NavItem {
-    block-size: 100%;
-    position: relative;
-  }
+/* Formulários e cartões */
+.cartao { max-width: 460px; margin: 50px auto; background: var(--cinza); border-top: 5px solid var(--bordo); padding: 34px 30px; border-radius: 8px; }
+.cartao.largo { max-width: 680px; }
+.cartao h1 { font-size: 2.4rem; margin-bottom: 20px; }
+.cartao p, .cartao li { margin-bottom: 12px; }
+label { display: block; font-weight: 600; margin: 14px 0 6px; }
+input { width: 100%; padding: 12px; border-radius: 6px; border: 2px solid #3a3a3a; background: var(--preto); color: var(--branco); font-size: 1rem; font-family: inherit; }
+input:focus { border-color: var(--bordo); outline: none; }
+form .btn { width: 100%; margin-top: 24px; }
+.troca { margin-top: 20px; text-align: center; }
+.troca a { color: var(--branco); font-weight: 700; }
 
-  .ItemContent {
-    background-color: white;
-    border-radius: var(--radius-3);
-    box-shadow: var(--shadow-4);
-    inline-size: max(100%, 370px);
-    inset-block-start: var(--nav-block-size);
-    opacity: 0;
-    padding: var(--size-8);
-    position: absolute;
-    transition: 0.2s ease;
-    visibility: hidden;
-    z-index: var(--layer-3);
+footer { background: var(--bordo-escuro); text-align: center; padding: 24px 20px; margin-top: 40px; }
 
-    a {
-      color: black;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      gap: var(--size-5);
-      transition: 0.2s ease;
-
-      &::after {
-        font-family: 'Inter', sans-serif;
-        content: '\2191';
-        font-weight: bold;
-        color: var(--brand);
-        display: inline-flex;
-        rotate: 90deg;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: 0.2s ease;
-      }
-
-      &:is(:focus-visible, :hover) {
-        color: var(--brand);
-
-        &::after {
-          opacity: 1;
-          transform: translateY(0px);
-        }
-      }
-    }
-
-    .NavItem:hover & {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .NavItem:focus-within & {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  .Main {
-    grid-template-rows: 1fr min-content;
-
-    :is(img, picture) {
-      object-fit: cover;
-      block-size: 100%;
-      inline-size: 100%;
-
-      background: var(--gradient-8);
-    }
-  }
-
-  .CarouselWrapper {
-    overflow-x: hidden;
-  
-  }
-
-  .Carousel {
-    animation: slide 20s cubic-bezier(0.77, 0, 0.18, 1) forwards infinite;
-
-    > figure {
-      inline-size: 100dvi;
-      block-size: calc(100dvb - var(--nav-block-size) - var(--size-9));
-      overflow: hidden;
-    }
-  }
-
-  footer {
-    block-size: var(--size-9);
-    @media (width < 1024px) {
-      display: none;
-    }
-  }
-}
-
-@layer base.components {
-  .Logo {
-    inline-size: var(--size-11);
-
-    margin: 0;
-    padding: 0;
-  }
-
-  .NavLink {
-    padding-inline: var(--size-4);
-    block-size: 100%;
-
-    color: white;
-    background-color: inherit;
-    font-size: var(--font-size-2);
-
-    text-decoration-color: currentColor;
-    font-weight: var(--font-weight-6);
-    text-underline-offset: 1ex;
-
-    @media (width > 1024px) {
-      :is(.NavItem:focus-within, .NavItem:hover) & {
-        text-decoration: underline;
-        color: var(--brand);
-      }
-    }
-  }
-
-  .ButtonLink {
-    color: white;
-
-    background: var(--gradient-21);
-
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-6);
-    padding: var(--size-relative-2) var(--size-relative-5);
-    border-radius: var(--radius-4);
-    text-decoration: none;
-    transition: filter 0.2s ease;
-
-    &:hover {
-      filter: contrast(200%);
-    }
-  }
-
-  .ItemTitle {
-    color: var(--brand);
-  }
-
-  .NavIcon {
-    font-size: var(--font-size-5);
-    font-weight: var(--font-weight-4);
-
-    .NavLink:focus & {
-      color: var(--brand);
-    }
-  }
-
-  .CodePen {
-    padding-inline: var(--size-fluid-3);
-    block-size: 100%;
-  }
-}
-
-@keyframes slide {
-  20% {
-    transform: translateX(-100%);
-  }
-  40% {
-    transform: translateX(-200%);
-  }
-}
+@media (max-width: 600px) { nav { gap: 12px; font-size: .9rem; } .hero { padding: 60px 20px; } }

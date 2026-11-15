@@ -8,29 +8,31 @@
 </head>
 <body>
   <header>
-    <h1>Eazy Buy</h1>
-    <nav aria-label="Menu principal">
-      <a href="index.html">Início</a>
-      <a href="sobre.html" aria-current="page">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+    <div class="barra">
+      <a href="index.html" class="logo"><img src="css/imagens/Compra.png" alt="Eazy Buy"></a>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="sobre.html" aria-current="page">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="login.html" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn">Cadastrar</a>
+      </nav>
+    </div>
   </header>
   <main>
-    <section class="cartao">
-      <h2>Sobre:</h2>
-      <p>Este é um projeto de um site para venda de ingressos de show, criado por nosso grupo para aprender HTML, CSS e Git.</p>
+    <section class="cartao largo">
+      <h1>Sobre</h1>
+      <p>A Eazy Buy é um projeto de site para venda de ingressos de show, criado pelo nosso grupo para aprender HTML, CSS e Git.</p>
       <h2>Como comprar seu ingresso</h2>
       <ol>
         <li>Escolher o show</li>
-        <li>Selecionar o setor e a quantidade</li>
+        <li>Selecionar a quantidade de ingressos</li>
         <li>Fazer o pagamento</li>
         <li>Receber o ingresso digital</li>
       </ol>
-      <a href="index.html">Voltar ao início</a>
+      <a class="btn" href="index.html">Ver shows</a>
     </section>
   </main>
-  <footer>
-    <p>Projeto de venda de ingressos de show</p>
-  </footer>
+  <footer><p>Eazy Buy · Projeto de venda de ingressos de show</p></footer>
 </body>
 </html>
